@@ -1,4 +1,9 @@
-m = [[1,2,3],
-     [2,3,3],
-     [5,4,3]]
-print([list(x) for x in zip(*[x[::-1] for x in m])])
+sayac = 0
+toplam = 0
+
+dizi = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+for k in dizi:
+     sayac = sayac + 1
+     toplam = toplam + k
+print(toplam/sayac)

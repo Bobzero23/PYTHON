@@ -2,4 +2,4 @@
 
 age = 5
 name = "Bobzero"
-print(age)
+print(name)
