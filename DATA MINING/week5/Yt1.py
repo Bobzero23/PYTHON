@@ -1,6 +1,6 @@
 import pandas as pd
 import matplotlib as plt
 
-
-data = pd.read_csv('data.csv')
-print(data)
+#olm ne ugrastim be, boyle bisey olamaz allah kahretsin
+data = pd.read_csv('C:\\data.csv')
+print(data.head())
