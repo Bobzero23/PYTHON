@@ -18,12 +18,15 @@ y = dataset.iloc[:, 4].values
 #this means it will keep 25% percent of the dataset for the test and it takes random rows
 xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size = 0.25, random_state = 0)
 
+#putting everything in a standard scalar
 sc_x = StandardScaler()
 xtrain = sc_x.fit_transform(xtrain)
 xtest = sc_x.transform(xtest)
 
 print (xtrain[0:10, :])
 
+#assigning the regression to a variable
+#then when you say fit it finds the best y = m*x + b line
 classifier = LogisticRegression(random_state = 0)
 classifier.fit(xtrain, ytrain)
 y_pred = classifier.predict(xtest)
@@ -49,4 +52,4 @@ plt.title('Classifier (Test set)')
 plt.xlabel('Age')
 plt.ylabel('Estimated Salary')
 plt.legend()
-plt.show()
+plt.show() 
