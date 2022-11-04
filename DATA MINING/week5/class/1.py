@@ -8,7 +8,7 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
 from matplotlib.colors import ListedColormap
 
-dataset = pd.read_csv("User_Data.csv")
+dataset = pd.read_csv("C:\\data.csv")
 
 x = dataset.iloc[:, [2, 3]].values
 y = dataset.iloc[:, 4].values
