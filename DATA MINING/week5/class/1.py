@@ -8,11 +8,14 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
 from matplotlib.colors import ListedColormap
 
+#reading the data set
 dataset = pd.read_csv("C:\\data.csv")
 
+#defining the c.feature and the lebel
 x = dataset.iloc[:, [2, 3]].values
 y = dataset.iloc[:, 4].values
 
+#this means it will keep 25% percent of the dataset for the test and it takes random rows
 xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size = 0.25, random_state = 0)
 
 sc_x = StandardScaler()
