@@ -1,0 +1,6 @@
+print("What's up Bobzero")
+print("What's up", end=" ")
+print("Bobzero")
+# print("What's up\nBobzero")
+print("What's up\tBobzero")
+print("What's up " + "Bobzero")
