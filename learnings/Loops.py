@@ -30,3 +30,11 @@ for x in nums:
     if x == 3:
         continue
     print(x, end=" ")
+
+print()
+
+for x in range(5):
+    if x == 9:
+        break
+else:
+    print("Entered else")
