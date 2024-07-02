@@ -15,14 +15,9 @@ while True:
         print("Error: Could not read frame.")
         break
 
-    # Detect objects in the frame
-    bbox, label, conf = cv.detect_common_objects(frame)
-
-    # Draw bounding boxes on the frame
-    output_image = draw_bbox(frame, bbox, label, conf)
 
     # Display the frame with bounding boxes
-    cv2.imshow("Object detection", output_image)
+    cv2.imshow("Object detection", frame)
 
     # Break the loop if 'q' is pressed
     if cv2.waitKey(1) & 0xFF == ord("q"):
