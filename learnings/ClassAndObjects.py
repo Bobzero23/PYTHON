@@ -18,8 +18,10 @@ class Dog:
     def __str__(self):
         return "Dog\n" + "name: " + self._name + "\nage: " + str(self._age)
 
+    @staticmethod
     def random():
         return 7
+
 
 # Creating the object instance
 d1 = Dog("Scruffy", 5)
@@ -27,5 +29,3 @@ print(d1)
 
 # Calling the non-static method
 print(Dog.random())
-
-

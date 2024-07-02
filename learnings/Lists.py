@@ -10,5 +10,9 @@ print("Index 1", list[1])
 list.insert(1, "grouse")
 print(list)
 
+print("\nPrinting the list: ")
+for i in range(len(list)):
+    print(list[i])
+
 del(list[1])
-print(list)
+print("\n", list)
