@@ -34,7 +34,10 @@ for x in nums:
 print()
 
 for x in range(5):
-    if x == 9:
+    if x == 3:
         break
+
+    print(x, end=" ")
 else:
+    print()
     print("Entered else")
