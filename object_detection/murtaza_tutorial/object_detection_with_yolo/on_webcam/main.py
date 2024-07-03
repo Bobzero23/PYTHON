@@ -17,6 +17,18 @@ cap.set(4, 1020)
 
 model = YOLO("../yolo_weights/yolov8n.pt")
 
+classNames = ["person", "bycycle", "car", "motorbike", "aeroplane", "bus", "train", "truck", "boat",
+              "traffic light", "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat",
+              "dog", "horse", "sheep", "cow", "elephant", "bear", "zebra", "giraffe", "backpack", "umbrella",
+              "handbag", "tie", "suitcase", "frisbee", "skis", "snowboard", "sports ball", "kite", "baseball bat",
+              "baseball glove", "skateboard", "surfboard", "tennis racket", "bottle", "wine glass", "cup",
+              "fork", "knife", "spoon", "bowl", "banana", "apple", "sandwich", "orange", "broccoli",
+              "carrot", "hot dot", "pizza", "donut", "cake", "chair", "sofa", "pottedplant", "bed",
+              "dinningtable", "toilet", "tvmonitor", "laptop", "mouse", "remote", "keyboard", "cell phone",
+              "microwave", "oven", "toaster", "sink", "refrigerator", "book", "clock", "vase", "scissors",
+              "teddy bear", "hair drier", "toothbrush"
+              ]
+
 while True:
     success, img = cap.read()
     results = model(img, stream=True)
@@ -42,10 +54,14 @@ while True:
             # print(x1, y1, x2, y2) this will print the result of the normal method which is not the (cvzone)
 
             # getting the confidence value (estimated value of the object)
-            conf = math.ceil(box.conf[0]*100) / 100
+            conf = math.ceil(box.conf[0] * 100) / 100
             print(conf)
             # putting the text of confidence zone to the frame
-            cvzone.putTextRect(img, f'{conf}', (x1, y1-20))
+            # we used max incase the object overflows the frame dimension, and we want to see the 'conf'
+
+            # finding the classes
+            cls = int(box.cls[0])
+            cvzone.putTextRect(img, f'{classNames[cls]} {conf}', (max(0, x1), max(30, y1)))
 
     cv2.imshow("Image", img)
     cv2.waitKey(1)
