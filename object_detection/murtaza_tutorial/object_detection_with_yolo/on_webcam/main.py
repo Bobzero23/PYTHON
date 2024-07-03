@@ -6,14 +6,19 @@ import cvzone
 # for rounding the confidence value
 import math
 
+# this is for webcam
 # this is actually the id number of your camera
 # if you have multiple cameras connected you can use (1, 2, etc.)
-cap = cv2.VideoCapture(0)
+# cap = cv2.VideoCapture(0)
 
+# this is for videos
+cap = cv2.VideoCapture("../media/jaywalking.mp4")
+
+# for the webcam
 # setting the width of the cam
-cap.set(3, 1280)
+# cap.set(3, 1280)
 # setting the height of the cam
-cap.set(4, 1020)
+# cap.set(4, 1020)
 
 model = YOLO("../yolo_weights/yolov8n.pt")
 
